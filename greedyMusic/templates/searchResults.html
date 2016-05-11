@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <p>Query:{{ query_string }}</p>
+	{% if found_entries %}
+    {% for entry in found_entries %}
+        {% if key == 1 %}
+            <p>Search Result for Track :{{ entry }}</p>
+        {% elif key == 2 %}
+            <p>Search Result for Genre :{{ entry }}</p>
+        {% elif key == 0 %}
+            <p>Not Found</p>
+        {% endif %}
+
+    {% endfor %}
+	{%else%}
+	        <p>Sorry! Not Found</p>
+	{% endif %}
+	
+</body>
+</html>

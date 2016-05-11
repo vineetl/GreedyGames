@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <p>
+        {{ genreDetail }}
+    </p>
+    <button type="submit" onclick=formSubmit('form1'); value="Submit">Edit Genre</button>
+     <form action="{% url 'editGenre' %}" method="get" name='form1' id="form1">
+         <input type="hidden" id="pk" name="pk" value="{{genreDetail.id}}" />
+    </form>
+    <script>
+        function formSubmit(formName){
+            document.forms[formName].submit();
+                           	}
+    </script>
+
+</body>
+</html>
